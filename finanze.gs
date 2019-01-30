@@ -13,6 +13,8 @@ var column6 = 'H';
 var column7 = 'I';
 var column8 = 'J';
 var column9 = 'K';
+var column10 = 'L';
+var lastColumn = column10;
 
 // savings data
 var savingsRow = '22';
@@ -45,6 +47,7 @@ function balanceMoney() {
   _balanceMoneyWithBanckAccount(column7);
   _balanceMoneyWithBanckAccount(column8);
   _balanceMoneyWithBanckAccount(column9);
+  _balanceMoneyWithBanckAccount(column10);
   var newBalances = JSON.stringify(_getBalances());
   Logger.log('New balances: ' + newBalances)
   
@@ -57,7 +60,7 @@ function balanceMoney() {
 
 function _getBalances() {
   var sheet = _getSheet();
-  var range = sheet.getRange(cashColumn+'1'+':'+column9+'1');
+  var range = sheet.getRange(cashColumn+'1'+':'+lastColumn+'1');
   return range.getValues();
 }
 
